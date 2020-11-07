@@ -17,5 +17,14 @@
 		<button mat-button (click)="updateColor()">Update</button>
 
 		<pre>{{ courseLessons | json }}</pre>
+
+		<mat-list>
+			 <mat-list-item
+				 *ngFor="let lesson of courseLessons"
+				 (click)="selectLesson(lesson)">
+				  <h3>{{lesson.title}}</h3>
+			 </mat-list-item>
+		</mat-list>
+
 	</mat-card-content>
 </mat-card>

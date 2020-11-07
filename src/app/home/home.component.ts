@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = "HELLO DERP";
 
+	currentLesson = null;
+
 	themeColor = 'red';
 
   courseLessons = [
@@ -31,4 +33,8 @@ export class HomeComponent implements OnInit {
 		this.themeColor = 'fuchsia'
 	};
 
+	selectLesson(lesson) {
+		console.log('>> WHICH LESSON?!', lesson);
+		this.currentLesson = lesson;
+	}
 }
