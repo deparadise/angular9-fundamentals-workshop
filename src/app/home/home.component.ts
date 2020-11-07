@@ -26,4 +26,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updateColor() {
+	  console.log('Update color Whoop Whpp!!');
+		this.themeColor = 'fuchsia'
+	};
+
 }

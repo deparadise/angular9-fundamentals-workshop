@@ -14,6 +14,8 @@
 			<input matInput [(ngModel)]="themeColor" placeholder="What's my mood"/>
 		</mat-form-field>
 
+		<button mat-button (click)="updateColor()">Update</button>
+
 		<pre>{{ courseLessons | json }}</pre>
 	</mat-card-content>
 </mat-card>
