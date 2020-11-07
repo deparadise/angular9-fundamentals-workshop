@@ -1,12 +1,17 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-			{{title}}
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+	<mat-card-header>
+		<mat-card-title>
+			{{ title }}
+		</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<span [style.color]="themeColor">Some Colored Text!</span>
 
-      <pre>{{courseLessons | json}}</pre>
-      
-    </mat-card-content>
-  </mat-card>
+		<mat-form-field class="example-full-width">
+			<mat-label>Favorite Color</mat-label>
+			<input matInput [(ngModel)]="themeColor" placeholder="What's my mood"/>
+		</mat-form-field>
+
+		<pre>{{ courseLessons | json }}</pre>
+	</mat-card-content>
+</mat-card>

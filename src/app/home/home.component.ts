@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = "HELLO DERP";
+
+	themeColor = 'red';
+
   courseLessons = [
     { title: 'Hello Angular' },
     { title: 'Component Fundamentals' },
