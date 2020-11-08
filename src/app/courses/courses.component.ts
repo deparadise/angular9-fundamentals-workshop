@@ -21,14 +21,14 @@ export class CoursesComponent implements OnInit {
 			id: 2,
 			title: 'GAME DESIGN',
 			description: 'Unity, Unreal, Blender',
-			percentComplete: 26,
+			percentComplete: 95,
 			favorite: true
 		},
 		{
 			id: 3,
 			title: 'SPA DESIGN',
 			description: 'Ember, React, Gatsby, Angular, Node.js, GraphQL',
-			percentComplete: 26,
+			percentComplete: 42,
 			favorite: true
 		},
 	];

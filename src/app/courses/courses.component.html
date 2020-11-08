@@ -30,7 +30,8 @@
 		<mat-card>
 			<mat-card-header>
 					<mat-card-title>
-						Select Course
+						<span *ngIf="selectedCourse.id else noSelectionHeader">{{selectedCourse.title}}</span>
+						<ng-template #noSelectionHeader>Select a course or add a new one!</ng-template>
 					</mat-card-title>
 			</mat-card-header>
 			<form #templateVarForm="ngForm" (submit)="saveCourse()">
@@ -59,6 +60,22 @@
 							placeholder="Description"
 							[(ngModel)]="selectedCourse.description">
 					</mat-form-field>
+					
+					<section>
+						<h4>{{selectedCourse.percentComplete}}% Complete</h4>
+						<mat-slider
+						thumbLabel
+						name="percentComplete"
+						[(ngModel)]="selectedCourse.percentComplete"
+						min="0" max="100" step="5"
+						class="full-width"></mat-slider>
+					</section>
+						
+					<mat-checkbox
+						name="cousesFavorite"
+						[(ngModel)]="selectedCourse.favorite"
+						color="primary">
+						Courses Favorite</mat-checkbox>
 
 				</mat-card-content>
 				<mat-card-actions>
