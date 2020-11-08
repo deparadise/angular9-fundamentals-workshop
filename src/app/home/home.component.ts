@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = "HELLO DERP";
 
-	currentLesson = null;
+	selectedCourse = null;
 
 	themeColor = 'red';
 
@@ -35,6 +35,6 @@ export class HomeComponent implements OnInit {
 
 	selectLesson(lesson) {
 		console.log('>> WHICH LESSON?!', lesson);
-		this.currentLesson = lesson;
+		this.selectedCourse = lesson;
 	}
 }

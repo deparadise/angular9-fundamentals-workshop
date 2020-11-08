@@ -34,7 +34,7 @@
 		  <mat-card-title>DEBUG</mat-card-title>
 	 </mat-card-header>
 	 <mat-card-content>
-		<pre *ngIf="currentLesson else lessonDefaultPH">{{currentLesson | json}}</pre>
+		<pre *ngIf="selectedCourse else lessonDefaultPH">{{selectedCourse | json}}</pre>
 
 		<ng-template #lessonDefaultPH>Select a lesson please.</ng-template>
 		

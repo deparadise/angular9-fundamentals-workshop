@@ -1,36 +1,50 @@
 <div class="courses-containers">
-    <div class="courses-list">
-        <mat-card>
-        <mat-card-header>
-            <mat-card-title>
-            Course List
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
+	<div class="courses-list">
+		<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+			Course List
+			</mat-card-title>
+		</mat-card-header>
+			<mat-card-content>
 
-            <!-- COURSES LIST -->
+				<mat-list>
+						<mat-list-item
+							*ngFor="let course of courses"
+							(click)="selectCourse(course)">
+							<h3 matLine>{{course.title}}</h3>
+							<p matLine>{{course.description}}</p>
+							<button mat-icon-button color="warn"
+							(click)="deleteCourse(course.id);$event.stopImmediatePropagation()">
+								 <mat-icon>delete</mat-icon>
+							</button>
+						</mat-list-item>
 
-        </mat-card-content>
-        </mat-card>
-    </div>
+				</mat-list>
 
-    <div class="course-details">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    Select Course
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            
-            <!-- COURSE FORM -->
+			</mat-card-content>
+		</mat-card>
+	</div>
 
-            </mat-card-content>
-            <mat-card-actions>
+	<div class="course-details">
+		<mat-card>
+			<mat-card-header>
+					<mat-card-title>
+						Select Course
+					</mat-card-title>
+			</mat-card-header>
+			<mat-card-content>
+			
+			<pre *ngIf="currentCourse else courseDefaultPH">{{currentCourse | json}}</pre>
 
-            <!-- COURSE ACTIONS -->
+			<ng-template #courseDefaultPH>Please select a course.</ng-template>
 
-            </mat-card-actions>
-        </mat-card>
-    </div>
+			</mat-card-content>
+			<mat-card-actions>
+
+			<!-- COURSE ACTIONS -->
+
+			</mat-card-actions>
+		</mat-card>
+	</div>
 </div>
