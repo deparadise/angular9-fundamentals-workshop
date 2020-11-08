@@ -58,6 +58,10 @@ export class CoursesComponent implements OnInit {
 		this.resetSelectedCourse();
 	}
 
+	saveCourse() {
+		console.log('>> SAVING COURSE!');
+	}
+
 	constructor() { }
 
 	ngOnInit(): void {

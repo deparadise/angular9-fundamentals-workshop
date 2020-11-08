@@ -33,7 +33,7 @@
 						Select Course
 					</mat-card-title>
 			</mat-card-header>
-			<form #templateVarForm="ngForm">
+			<form #templateVarForm="ngForm" (submit)="saveCourse()">
 				<mat-card-content>
 				
 					<!-- SAMPLE WORK FROM PREVIOUS EXCERCISE -->
@@ -64,6 +64,14 @@
 				<mat-card-actions>
 
 					<!-- COURSE ACTIONS -->
+					<button
+						type="submit"
+						color="primary"
+						mat-button
+						[disabled]="templateVarForm.invalid">
+						Submit
+					</button>
+
 					<button
 						type="button"
 						mat-button
