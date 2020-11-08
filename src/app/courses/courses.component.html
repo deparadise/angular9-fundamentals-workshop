@@ -33,18 +33,48 @@
 						Select Course
 					</mat-card-title>
 			</mat-card-header>
-			<mat-card-content>
-			
-			<pre *ngIf="currentCourse else courseDefaultPH">{{currentCourse | json}}</pre>
+			<form #templateVarForm="ngForm">
+				<mat-card-content>
+				
+					<!-- SAMPLE WORK FROM PREVIOUS EXCERCISE -->
+					<!-- <pre *ngIf="selectedCourse else courseDefaultPH">{{selectedCourse | json}}</pre> -->
+					<!-- <ng-template #courseDefaultPH>Please select a course.</ng-template> -->
 
-			<ng-template #courseDefaultPH>Please select a course.</ng-template>
+					<!-- FORM EXCERCISE WORK -->
+					<mat-form-field>
+						<input
+							matInput
+							type="text"
+							name="title"
+							placeholder="Title"
+							required
+							[(ngModel)]="selectedCourse.title">
+					</mat-form-field>
 
-			</mat-card-content>
-			<mat-card-actions>
+					<mat-form-field>
+						<input
+							matInput
+							type="text"
+							name="description"
+							placeholder="Description"
+							[(ngModel)]="selectedCourse.description">
+					</mat-form-field>
 
-			<!-- COURSE ACTIONS -->
+				</mat-card-content>
+				<mat-card-actions>
 
-			</mat-card-actions>
+					<!-- COURSE ACTIONS -->
+					<button
+						type="button"
+						mat-button
+						(click)="cancelCouseUpdate()">
+						Cancel
+					</button>
+				</mat-card-actions>
+			</form>
+
+			<pre>{{templateVarForm.value | json}}</pre>
+			<pre>{{templateVarForm.valid | json}}</pre>
 		</mat-card>
 	</div>
 </div>
