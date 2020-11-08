@@ -1,37 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
 	selector: 'app-courses',
 	templateUrl: './courses.component.html',
-	styleUrls: ['./courses.component.scss']
+	styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-	
 	selectedCourse = null;
-	
-	courses = [
-		{
-			id: 1,
-			title: 'Angular 9 Fundamentals',
-			description: 'Learn the fundamentals of Angular 9',
-			percentComplete: 26,
-			favorite: true
-		},
-		{
-			id: 2,
-			title: 'GAME DESIGN',
-			description: 'Unity, Unreal, Blender',
-			percentComplete: 95,
-			favorite: true
-		},
-		{
-			id: 3,
-			title: 'SPA DESIGN',
-			description: 'Ember, React, Gatsby, Angular, Node.js, GraphQL',
-			percentComplete: 42,
-			favorite: true
-		},
-	];
+	courses = null;
 
 	resetSelectedCourse() {
 		const emptyCouse = {
@@ -39,7 +16,7 @@ export class CoursesComponent implements OnInit {
 			title: '',
 			description: '',
 			percentComplete: 0,
-			favorite: false
+			favorite: false,
 		};
 
 		this.selectedCourse = emptyCouse;
@@ -62,10 +39,10 @@ export class CoursesComponent implements OnInit {
 		console.log('>> SAVING COURSE!');
 	}
 
-	constructor() { }
+	constructor(private coursesService: CoursesService) {}
 
 	ngOnInit(): void {
 		this.resetSelectedCourse();
+		this.courses = this.coursesService.courses;
 	}
-
 }
