@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
@@ -7,10 +7,16 @@ import { CoursesService } from '../shared/services/courses.service';
 	styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+	// CHALLENGE
+	// done: Complete remote UPDATE call
+	// done: Complete remote delete call
+	// done: CLEAR entry form
+
 	selectedCourse = null;
 	courses = null;
 
 	resetSelectedCourse() {
+		// use
 		const emptyCouse = {
 			id: null,
 			title: '',
@@ -33,20 +39,27 @@ export class CoursesComponent implements OnInit {
 
 	deleteCourse(courseId) {
 		console.log('>> COURSE TO DELETE:', courseId);
-		this.coursesService.delete(courseId);
+		this.coursesService.delete(courseId).subscribe((result) => {
+			console.log('>> COURSE DELETED!', result);
+			this.loadCourses();
+		});
 	}
 
 	saveCourse(course) {
 		if (course.id) {
 			console.log('>> UPDATING COURSE!');
-			this.coursesService.update(course);
+			this.coursesService.update(course).subscribe((result) => {
+				console.log('>> COURSE UPDATED!', result);
+			});
 		} else {
 			console.log('>> SAVING NEW COURSE!');
 			this.coursesService.create(course).subscribe((result) => {
-				console.log('>> COURSE CREATED:', result);
+				console.log('>> COURSE CREATED!:', result);
 				this.loadCourses();
 			});
 		}
+
+		this.resetSelectedCourse();
 	}
 
 	loadCourses() {

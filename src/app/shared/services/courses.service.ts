@@ -34,32 +34,37 @@ export class CoursesService {
 
 	constructor(private http: HttpClient) {}
 
-	getCoursesURL() {
+	private getCoursesURL() {
 		return `${BASE_URL}/${this.model}`;
+	}
+
+	private getCourseRecordUrl(courseId) {
+		return `${this.getCoursesURL()}/${courseId}`;
 	}
 
 	// CRUD
 	// C
 	create(course) {
-		console.log('>> CREATE COURSE:', course);
+		// console.log('>> CREATE COURSE:', course);
 		return this.http.post(this.getCoursesURL(), course);
 	}
 
 	// R
 	all() {
 		// return this.courses;
-
 		return this.http.get(this.getCoursesURL());
 	}
 	find(courseId) {}
 
 	// U
 	update(course) {
-		console.log('>> UPDATE COURSE:', course);
+		// console.log('>> UPDATE COURSE:', course);
+		return this.http.put(this.getCourseRecordUrl(course.id), course);
 	}
 
 	// D
 	delete(courseId) {
-		console.log('>> DELETE COURSE:', courseId);
+		// console.log('>> DELETE COURSE:', courseId);
+		return this.http.delete(this.getCourseRecordUrl(courseId));
 	}
 }
