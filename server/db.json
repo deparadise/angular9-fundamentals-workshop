@@ -1,25 +1,25 @@
 {
-  "courses": [
-    {
-      "id": 1,
-      "title": "Angular 9 Fundamentals",
-      "description": "Learn the fundamentals of Angular 9",
-      "percentComplete": 26,
-      "favorite": true
-    },
-    {
-      "id": 2,
-      "title": "FUCKING ",
-      "description": "UPDATE",
-      "percentComplete": 70,
-      "favorite": true
-    },
-    {
-      "id": 3,
-      "title": "wass",
-      "description": "upppppp",
-      "percentComplete": 10,
-      "favorite": false
-    }
-  ]
+	"courses": [
+		{
+			"id": 1,
+			"title": "Angular 9 Fundamentals",
+			"description": "Learn the fundamentals of Angular 9",
+			"percentComplete": 26,
+			"favorite": true
+		},
+		{
+			"id": 2,
+			"title": "PLEASE ",
+			"description": "UPDATE",
+			"percentComplete": 70,
+			"favorite": true
+		},
+		{
+			"id": 3,
+			"title": "wass",
+			"description": "upppppp",
+			"percentComplete": 10,
+			"favorite": false
+		}
+	]
 }
