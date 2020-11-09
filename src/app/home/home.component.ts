@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
 	// ng g s shared/services/lessons -d
 	// done: add the lessons service to app.module
 	// done: inject the service into the home component
-	// TODO: MOVE LESSONS TO SERVICE AND CONSUME LESSONS
-	//   courseLessons =
+	// done: MOVE LESSONS TO SERVICE AND CONSUME LESSONS
 
 	constructor(private lessonsService: LessonsService) {}
 
