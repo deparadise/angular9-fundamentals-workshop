@@ -22,27 +22,34 @@ export class CoursesComponent implements OnInit {
 		this.selectedCourse = emptyCouse;
 	}
 
+	cancelCouseUpdate() {
+		this.resetSelectedCourse();
+	}
+
 	selectCourse(course) {
 		console.log('>> WHICH COURSE?!', course);
 		this.selectedCourse = course;
 	}
 
 	deleteCourse(courseId) {
-		console.log('>> COURSE DELETED:', courseId);
+		console.log('>> COURSE TO DELETE:', courseId);
+		this.coursesService.delete(courseId);
 	}
 
-	cancelCouseUpdate() {
-		this.resetSelectedCourse();
-	}
-
-	saveCourse() {
-		console.log('>> SAVING COURSE!');
+	saveCourse(course) {
+		if (course.id) {
+			console.log('>> UPDATING COURSE!');
+			this.coursesService.update(course);
+		} else {
+			console.log('>> SAVING NEW COURSE!');
+			this.coursesService.create(course);
+		}
 	}
 
 	constructor(private coursesService: CoursesService) {}
 
 	ngOnInit(): void {
 		this.resetSelectedCourse();
-		this.courses = this.coursesService.courses;
+		this.courses = this.coursesService.all();
 	}
 }
