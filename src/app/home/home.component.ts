@@ -1,37 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { LessonsService } from '../shared/services/lessons.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  title = "HELLO DERP";
-
-	selectedCourse = null;
-
+	title = 'HELLO DERP';
 	themeColor = 'red';
 
-  courseLessons = [
-    { title: 'Hello Angular' },
-    { title: 'Component Fundamentals' },
-    { title: 'Template Driven Forms' },
-    { title: 'Angular Services' },
-    { title: 'Server Communication' },
-    { title: 'Component Driven Architecture' },
-    { title: 'Angular Routing' },
-    { title: 'Unit Testing Fundamentals' },
-  ];
+	selectedCourse = null;
+	courseLessons = null;
 
-  constructor() { }
+	// CHALLENGE
+	// done: create a lessons service
+	// ng g s shared/services/lessons -d
+	// done: add the lessons service to app.module
+	// done: inject the service into the home component
+	// TODO: MOVE LESSONS TO SERVICE AND CONSUME LESSONS
+	//   courseLessons =
 
-  ngOnInit(): void {
-  }
+	constructor(private lessonsService: LessonsService) {}
 
-  updateColor() {
-	  console.log('Update color Whoop Whpp!!');
-		this.themeColor = 'fuchsia'
-	};
+	ngOnInit(): void {
+		this.courseLessons = this.lessonsService.all();
+	}
+
+	updateColor() {
+		console.log('Update color Whoop Whpp!!');
+		this.themeColor = 'fuchsia';
+	}
 
 	selectLesson(lesson) {
 		console.log('>> WHICH LESSON?!', lesson);
