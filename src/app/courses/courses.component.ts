@@ -42,14 +42,23 @@ export class CoursesComponent implements OnInit {
 			this.coursesService.update(course);
 		} else {
 			console.log('>> SAVING NEW COURSE!');
-			this.coursesService.create(course);
+			this.coursesService.create(course).subscribe((result) => {
+				console.log('>> COURSE CREATED:', result);
+				this.loadCourses();
+			});
 		}
+	}
+
+	loadCourses() {
+		this.coursesService
+			.all()
+			.subscribe((courses) => (this.courses = courses));
 	}
 
 	constructor(private coursesService: CoursesService) {}
 
 	ngOnInit(): void {
 		this.resetSelectedCourse();
-		this.courses = this.coursesService.all();
+		this.loadCourses();
 	}
 }
