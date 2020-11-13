@@ -10,6 +10,10 @@ export class HomeComponent implements OnInit {
 	title = 'HELLO DERP';
 	themeColor = 'red';
 
+	// CHALLENGE
+	// TODO: CREATE a lessons-list component
+	// TODO: CREATE THE appropriate inputs and outputs
+
 	selectedCourse = null;
 	courseLessons = null;
 
