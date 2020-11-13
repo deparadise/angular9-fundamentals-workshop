@@ -1,25 +1,46 @@
 {
-	"courses": [
-		{
-			"id": 1,
-			"title": "Angular 9 Fundamentals",
-			"description": "Learn the fundamentals of Angular 9",
-			"percentComplete": 26,
-			"favorite": true
-		},
-		{
-			"id": 2,
-			"title": "PLEASE ",
-			"description": "UPDATE",
-			"percentComplete": 70,
-			"favorite": true
-		},
-		{
-			"id": 3,
-			"title": "wass",
-			"description": "upppppp",
-			"percentComplete": 10,
-			"favorite": false
-		}
-	]
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular 9 Fundamental nooob!",
+      "description": "Learn the fundamentals of Angular 9",
+      "percentComplete": 26,
+      "favorite": true
+    },
+    {
+      "id": 2,
+      "title": "PLEASE ",
+      "description": "UPDATE",
+      "percentComplete": 70,
+      "favorite": true
+    },
+    {
+      "id": 3,
+      "title": "wass",
+      "description": "upppppp!!!!!!!!!",
+      "percentComplete": 10,
+      "favorite": false
+    },
+    {
+      "id": 4,
+      "title": "Derpy",
+      "description": "merpy",
+      "percentComplete": 70,
+      "favorite": true
+    },
+    {
+      "id": 5,
+      "title": "nope",
+      "description": "set",
+      "percentComplete": 0,
+      "favorite": false
+    },
+    {
+      "id": 6,
+      "title": "loop",
+      "description": "lip",
+      "percentComplete": 0,
+      "favorite": false
+    }
+  ]
 }

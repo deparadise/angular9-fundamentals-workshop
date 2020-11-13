@@ -50,6 +50,7 @@ export class CoursesComponent implements OnInit {
 			console.log('>> UPDATING COURSE!');
 			this.coursesService.update(course).subscribe((result) => {
 				console.log('>> COURSE UPDATED!', result);
+				this.loadCourses();
 			});
 		} else {
 			console.log('>> SAVING NEW COURSE!');
